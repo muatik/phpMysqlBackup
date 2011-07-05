@@ -4,7 +4,6 @@ PHP MYSQL BACKUP 0.5
 ---------------------------
 Tarih: 13 Kasım(11) 2008
 Yazan: Mustafa Atik
-E-Posta: mr.atik@gmail.com
 Detaylı Bilgi: http://cookingthecode.com
 
 Bu uygulama, mysql veritabanı sunucularıyla çalışabilecek bir yedekleme uygulamasıdır.
@@ -15,7 +14,7 @@ Bu uygulamayı istediğiniz şekilde kullanabilirsiniz. İyi kullanın.
 */
 ini_set('mbstring.internal_encoding','UTF-8');
 error_reporting(E_ALL);
-require_once('db_connection.php');	// veritabanı nesnesinin yaratıldığı sınıf
+require_once('dbConnection.php');	// veritabanı nesnesinin yaratıldığı sınıf
 require_once('mailman.php');		// dosya iliştirilmiş e-posta mesajlarının gönderilmesine imkan sunan sınıf. Biraz eski sayılabilir.
 class phpMysqlBackup
 {
@@ -40,6 +39,18 @@ class phpMysqlBackup
 			'ftp'=>array('address'=>'site.com','username'=>'ftp_user','password'=>'ftp_password','remoteDir'=>'/public_html/','fileName'=>'aaYedek','timeSuffix'=>true)
 			)
 		);
+		
+		// örnek siliniyor.
+		$this->schedules=array();
+
+		/**
+		 * schedules dosyası varsa oku
+		 * */
+		if(isset($_SERVER["argv"][1])){
+			echo 'schedules dosyası okunuyor: '.$_SERVER['argv'][1];
+			include($_SERVER["argv"][1]);
+		}
+
 	}
 	function readLogs()	// önceden kaydedilmiþ iþlerin, yapýlýþ zamanlarý dosyadan okunacak
 	{
