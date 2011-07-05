@@ -1,0 +1,12 @@
+Bu proje, php ile mysql information schema üzerinden veritabanlarını
+yedekler. Yedek dosyasını yerel dizine, ftp ile uzak sunucuya, eposta
+kutusuna gönderebilir. Amaç, en az yetkiyle yedek alınabilmesini
+mümkün kılmak idi. 
+
+Kod epey eski, 2008'de yayınlamışım ama o tarihten de eskiydi. Belki
+birilerine lazım olur diye github'a ekliyorum. Daha iyi yöntem ve 
+araçlar var bu işler için.
+
+Belgelemesi şu adreste:
+http://cookingthecode.com/a19_Veritabani-yedeklemek
+(Çok salakça ifadeler kullanmışım belgede. Şimdi görünce utandım.)
